@@ -5,7 +5,7 @@
 
 ## Executive Summary
 
-The Machine is stable and idle. All 547 tests pass, all 3 SLOs are green with 100% error budget, and total monthly spend is $0.012. The system has accumulated 1,377 successful agent runs with a **0% failure rate**. However, the Machine is not actively *doing* anything right now -- it's a well-built engine that's parked. The biggest opportunities are in activating the backlog and turning on the self-improvement loop.
+The Machine is stable and idle. All 547 tests pass, all 3 SLOs are green with 100% error budget, and the system has accumulated 1,377 successful agent runs with a **0% failure rate**. However, the Machine is not actively *doing* anything right now -- it's a well-built engine that's parked. The biggest opportunities are in activating the backlog and turning on the self-improvement loop.
 
 ---
 
@@ -29,12 +29,27 @@ The Machine is stable and idle. All 547 tests pass, all 3 SLOs are green with 10
 
 ## Cost
 
+### Internal Tracker (MTBTM CostTracker -- agent-level LLM calls only)
+
 | Period | Spend |
 |--------|-------|
 | Today | $0.00 |
 | This week | $0.00 |
 | This month | $0.012 |
-| Projected monthly | $0.00 |
+
+> **Note:** The internal cost tracker only captures LLM calls made by MTBTM agents themselves. It does not reflect the full Claude API spend across the platform.
+
+### Real-World Cost Per Output (actual Claude API spend)
+
+| Output Type | Cost Per Run | Notes |
+|-------------|-------------|-------|
+| Discovery Agent session | ~$3 | Full 5-phase PSD generation via Claude Sonnet + Opus |
+| MVP (Forge Lite path) | ~$50 | PSD + code generation + deploy |
+| Full software build (pipeline path) | ~$250 | Discovery + decomposition + spec validation + artifact scaffolding + codegen + deploy |
+
+### Suggestion
+
+The internal CostTracker should be calibrated to reflect these real-world figures. Currently it only tracks the thin agent-layer calls, missing the bulk of spend that happens in Claude API calls during PSD generation, code generation, and spec validation. Consider instrumenting the Anthropic SDK calls directly or reconciling against the API dashboard.
 
 ---
 

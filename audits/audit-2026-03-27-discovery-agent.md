@@ -19,6 +19,7 @@ The Discovery Agent (v0.7.0) has seen rapid development -- 7 releases in 4 days 
 | Version | 0.7.0 |
 | DB | better-sqlite3 (`data/discovery.db`) |
 | LLM | Claude Sonnet 4.6 (chat/PSD), Claude Opus 4.6 (reasoning) |
+| Cost per session | ~$3 (actual Claude API spend) |
 | Budget | $10 default |
 | Deploy target | Railway |
 | Tests | 31 across 4 files |
@@ -197,7 +198,7 @@ The rubric has full test coverage (10 tests covering all 13 checks).
 
 2. **Persist sessions to SQLite** -- A restart should not lose user conversations. This is the highest-impact reliability fix.
 
-3. **Add authentication** -- Even a simple API key. The service writes to disk and calls Claude (costs money) on unauthenticated requests.
+3. **Add authentication** -- Even a simple API key. The service writes to disk and calls Claude (~$3/session) on unauthenticated requests.
 
 4. **Externalize the discovery URL** -- Replace the hardcoded `localhost:3001` in the Machine with an env var. Add timeout + error handling.
 

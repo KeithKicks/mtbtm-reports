@@ -27,6 +27,6 @@ Weekly audits, changelogs, and stakeholder reports for **The Machine That Builds
 | Tests | 547 passing | 31 (4 suites) |
 | Agent Runs | 1,377 (0% failure) | N/A (not running) |
 | Specs | 821 (766 built) | N/A |
-| Monthly Cost | $0.012 | $0.00 |
+| Cost per run | ~$50/MVP, ~$250/full build | ~$3/session |
 | SLOs | All green | No SLOs defined |
 | Version | Phase 06 complete | v0.7.0 |
