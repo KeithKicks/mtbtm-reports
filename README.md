@@ -17,6 +17,7 @@ Weekly audits, changelogs, and stakeholder reports for **The Machine That Builds
 |--------|------|
 | MTBTM (Core Machine) | [View Changelog](changelogs/CHANGELOG-mtbtm.md) |
 | Discovery Agent | [View Changelog](changelogs/CHANGELOG-discovery-agent.md) |
+| Audit & Self-Improvement Subsystem | [View Changelog](changelogs/CHANGELOG-audit-system.md) |
 
 ---
 
