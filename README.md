@@ -18,16 +18,17 @@ Weekly audits, changelogs, and stakeholder reports for **The Machine That Builds
 | MTBTM (Core Machine) | [View Changelog](changelogs/CHANGELOG-mtbtm.md) |
 | Discovery Agent | [View Changelog](changelogs/CHANGELOG-discovery-agent.md) |
 | Audit & Self-Improvement Subsystem | [View Changelog](changelogs/CHANGELOG-audit-system.md) |
+| Night Receptionist | [View Changelog](changelogs/CHANGELOG-night-receptionist.md) |
 
 ---
 
 ### Quick Stats (as of 2026-03-27)
 
-| Metric | MTBTM | Discovery Agent |
-|--------|-------|-----------------|
-| Tests | 547 passing | 31 (4 suites) |
-| Agent Runs | 1,377 (0% failure) | N/A (not running) |
-| Specs | 821 (766 built) | N/A |
-| Cost per run | ~$50/MVP, ~$250/full build | ~$3/session |
-| SLOs | All green | No SLOs defined |
-| Version | Phase 06 complete | v0.7.0 |
+| Metric | MTBTM | Discovery Agent | Night Receptionist |
+|--------|-------|-----------------|-------------------|
+| Tests | 547 passing | 31 (4 suites) | — |
+| Agent Runs | 1,377 (0% failure) | N/A (not running) | — |
+| Specs | 821 (766 built) | N/A | — |
+| Cost per run | ~$50/MVP, ~$250/full build | ~$3/session | — |
+| SLOs | All green | No SLOs defined | — |
+| Version | Phase 06 complete | v0.7.0 | v0.12.0 |
