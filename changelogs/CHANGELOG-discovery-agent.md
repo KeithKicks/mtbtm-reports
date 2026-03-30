@@ -2,6 +2,44 @@
 
 All notable changes to the MTBTM Discovery Agent.
 
+## [1.0.0] - 2026-03-30 — Premium Discovery Upgrade
+
+### Added
+- **7-phase discovery flow** (was 5): Idea Capture → Competitive Landscape → Feasibility → Configuration & Scope → Red Team Challenge → Blueprint → Complete
+- **Competitive Landscape phase** — forces stakeholders to identify existing solutions, competitors, and articulate differentiation and "why now"
+- **Red Team Challenge phase** — devil's advocate that presents the 3 biggest failure reasons and forces the stakeholder to defend or adapt
+- **Scope negotiation** — agent actively pushes back when too many must-have features are listed, suggests cuts, uses "first value moment" test
+- **Executive summary** — 2-4 sentence pitch in plain language added to PSD
+- **User personas** — 1-3 structured persona cards (name, role, goals, pain points, tech comfort, context)
+- **Competitive analysis** — competitors with strengths/weaknesses/differentiator, market gap, positioning statement
+- **Viability score** — 4-dimension scoring (market size, differentiation, feasibility, time-to-value) with 1-10 scores, rationale, weighted overall, and go/no-go recommendation
+- **Implementation roadmap** — phased build plan with features, dependencies, timeframes, milestones
+- **Stack rationale** — explains why the recommended tech stack was chosen
+- **User journey** — each feature maps to a step in the user's flow
+- **Session persistence** — conversations saved to SQLite, survive server restarts and idle timeouts (7-day TTL)
+- **Token-scoped session isolation** — `owner_id` on sessions, clients only see their own; `invite_tokens` table for access management
+- **Tabbed PSD panel** — Overview, Validation, Features, Roadmap, Risks & NFRs, Tech
+- **Replit/AI-ready export** — `.txt` prompt file optimized for pasting into Replit Agent, Cursor, or any AI coding tool
+- **Multi-format export dropdown** — Markdown, JSON, and Replit/AI prompt from a single menu
+- **Static survey form** at `/survey.html` — self-service 6-section questionnaire for tire-kicker intake, downloads as markdown
+- **Phase progress bar** — 7-step visual indicator with completed/active/pending states and glow effect
+
+### Changed
+- PSD scoring expanded to **22 checks** across 7 categories (was 13 checks, 5 categories)
+- PSD schema now includes `executiveSummary`, `targetUser.personas`, `competitiveAnalysis`, `viabilityScore`, `implementationRoadmap`, `technicalConstraints.stackRationale`, `mvpFeatures[].userJourney`
+- Markdown export updated to include all new PSD sections
+- UI redesigned with darker color scheme, better contrast, and premium visual hierarchy
+- Session TTL increased from 2 hours to 7 days (DB-backed)
+
+### Fixed
+- **PSD generation timeout** — Anthropic SDK timeout increased from 120s to 300s; conversation history compressed before structured output call (37 messages → 1 summary); maxTokens reduced from 16384 to 8192
+- Phase advance test updated for 7-phase flow
+
+### Technical
+- 35 tests passing (TypeScript + Vitest)
+- Zero TypeScript errors
+- End-to-end tested on Railway production: PSD generates in ~2.5 minutes, scores 100/100
+
 ## [0.7.0] - 2026-03-27
 
 ### Changed
