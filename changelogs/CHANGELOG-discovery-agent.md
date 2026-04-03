@@ -2,6 +2,56 @@
 
 All notable changes to the MTBTM Discovery Agent.
 
+> Full source: [github.com/KeithKicks/discovery-agent](https://github.com/KeithKicks/discovery-agent)
+
+## [1.3.0] - 2026-04-03 — UI Redesign: Light Theme & 3-Column Layout
+
+### Changed
+- **Complete visual redesign** — warm light theme (Linear-inspired) replaces dark techy UI. White surfaces, soft shadows, warm grays, indigo accent.
+- **3-column layout** — left sidebar (phase stepper with clickable history), center chat, right preview panel.
+- **Phase navigation** — click completed phases to review that conversation. "Back to current" pill to return.
+- **Progressive PSD preview** — right panel shows section cards as phases complete, switches to full markdown PSD after generation.
+- **Responsive** — sidebar collapses to icons at 1024px, horizontal strip at 768px.
+- **survey.html** and **one-pager** updated to matching light theme. Zero dark theme colors remain.
+
+### Added
+- Phase-tagged messages with filtered viewing
+- Phase summaries auto-extracted on advance
+- Active phase checklist in right preview panel
+
+---
+
+## [1.2.0] - 2026-04-03 — Stakeholder Alignment
+
+### Added
+- **Pause & Get Notes** — LLM-powered homework memo on pause (what's covered, what's needed, action items)
+- **Gap tracker** — PSD metadata `gaps[]` array, orange banner in UI
+- **One-pager HTML export** — visual leave-behind for client teams
+- **Session pacing** — break suggestions after 15+ turns
+
+### Changed
+- **"Red Team Challenge" renamed to "Idea Strengthening"** — friendlier, collaborative tone
+- **Conversation prompt rewritten** — "App Idea Coach" persona, no jargon, no phase numbers visible to users
+- **PSD format spec extracted** to separate constant, hidden from conversation
+
+---
+
+## [1.1.0] - 2026-04-03 — Markdown PSD
+
+### Changed
+- **PSD output is now markdown** — plain text LLM call replaces JSON tool_use. No more Zod validation failures.
+- **Two-step generation** — markdown call + lightweight meta extraction
+- **PSD scoring rewritten** — 14 section/substance checks (was 22 JSON field checks)
+- **API returns `psdMarkdown` + `psdMeta`** instead of `psd` object
+- **Exports updated** — Markdown IS the format. JSON exports metadata only.
+
+### Added
+- `PSDMeta`, `PSDResult` types, `PSDMetaSchema` (Zod)
+- `extractSection()` utility for heading-aware section extraction
+- Legacy JSON PSD compatibility for existing sessions
+
+---
+
 ## [1.0.0] - 2026-03-30 — Premium Discovery Upgrade
 
 ### Added

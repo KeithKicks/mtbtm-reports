@@ -15,7 +15,7 @@ Here's what the same scope would have cost a company hiring a traditional dev te
 | System | What It Is | Scale |
 |--------|-----------|-------|
 | **MTBTM Core Machine** | Self-improving AI agent platform with 24 agents, 30+ database tables, full CLI, REST API, quality auditor, bottleneck detector, spec refiner, maturity system, cost tracking, SLO monitoring | ~15,000 lines, 547 tests |
-| **Discovery Agent** | 7-phase conversational AI that turns ideas into validated product specs with viability scoring, competitive analysis, personas, red team challenge, 22-check scoring rubric, multi-format export, full UI, Railway deploy | ~4,500 lines, 35 tests |
+| **Discovery Agent** | Guided product discovery with viability scoring, competitive analysis, personas, gap tracking, markdown PSD output, 4-format export, 3-column light UI with phase navigation, pause/resume with homework memos, Railway deploy | ~5,000 lines, 34 tests, **v1.3.0** |
 | **Night Receptionist** | Complete multi-tenant SaaS -- AI receptionist with Twilio voice/SMS, Google Calendar, embeddable chat widget, React dashboard, agency admin portal, CRM, analytics, team RBAC, notifications | 12 releases, full product |
 | **Audit & Ops Tooling** | Automated weekly audits, changelog management, GitHub-hosted stakeholder reports | Supporting infrastructure |
 
@@ -64,8 +64,9 @@ The 15-day build vs. 7-8 month traditional timeline isn't just faster -- it chan
 
 | Date | System | Status | Link |
 |------|--------|--------|------|
+| **2026-04-03** | **Discovery Agent v1.3.0** | **Live on Railway** | [**View Report**](audits/audit-2026-04-03-discovery-agent.md) |
 | 2026-03-27 | MTBTM (Core Machine) | Stable / Idle | [View Report](audits/audit-2026-03-27-mtbtm.md) |
-| 2026-03-30 | Discovery Agent v1.0.0 | Live on Railway | [View Report](audits/audit-2026-03-27-discovery-agent.md) |
+| 2026-03-27 | Discovery Agent v1.0.0 | Superseded | [View Report](audits/audit-2026-03-27-discovery-agent.md) |
 
 ## Changelogs
 
@@ -78,13 +79,16 @@ The 15-day build vs. 7-8 month traditional timeline isn't just faster -- it chan
 
 ---
 
-### Quick Stats (as of 2026-03-30)
+### Quick Stats (as of 2026-04-03)
 
 | Metric | MTBTM | Discovery Agent | Night Receptionist |
 |--------|-------|-----------------|-------------------|
-| Tests | 547 passing | 35 (4 suites) | -- |
+| Tests | 547 passing | **34** (4 suites) | -- |
 | Agent Runs | 1,377 (0% failure) | Live on Railway | -- |
 | Specs | 821 (766 built) | N/A | -- |
 | Cost per run | ~$50/MVP, ~$250/full build | ~$3/session | -- |
 | SLOs | All green | No SLOs defined | -- |
-| Version | Phase 06 complete | v1.0.0 | v0.12.0 |
+| Version | Phase 06 complete | **v1.3.0** | v0.12.0 |
+| UI | Dark (CLI-focused) | **Light theme, 3-column** | Dark |
+| PSD Format | JSON | **Markdown** | N/A |
+| Export Formats | -- | **4** (MD, JSON meta, Replit, One-pager) | -- |
